@@ -1,10 +1,9 @@
 var imgIn;
 
-
 var matrix = [
-    [1/9, 1/9, 1/9],
-    [1/9, 1/9, 1/9],
-    [1/9, 1/9, 1/9]
+    [1/16, 2/16, 1/16],
+    [2/16, 4/16, 2/16],
+    [1/16, 2/16, 1/16]
 ]
 
 function preload() {
@@ -34,7 +33,6 @@ function blurFilter(img) {
             var index = (x + y * img.width) * 4;
 
             var c = convolution(x, y, matrix, matrixSize, imgIn);
-
 
             imgOut.pixels[index + 0] = c[0];
             imgOut.pixels[index + 1] = c[1];
